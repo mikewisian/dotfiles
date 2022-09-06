@@ -1,0 +1,20 @@
+#############################################################
+# Generic configuration that applies to all shells
+#############################################################
+
+source ~/.shellvars
+source ~/.shellfn
+source ~/.shellpaths
+source ~/.shellaliases
+# Source any local shell config
+[[ -s "$HOME/.shelllocal" ]] && source "$HOME/.shelllocal"
+#source ~/.iterm2_shell_integration.`basename $SHELL`
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"  # This loads nvm
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  # This loads nvm bash_completion

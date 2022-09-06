@@ -1,0 +1,51 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+
+brew "git"
+brew "jq"
+brew "mas"
+brew "nvm"
+brew "ruby"
+brew "tmux"
+brew "wget"
+brew "yarn"
+
+cask "1password"
+cask "alfred"
+cask "brave-browser"
+cask "chromedriver"
+cask "discord"
+cask "docker"
+cask "figma"
+cask "firefox"
+cask "font-hack"
+cask "font-lato"
+cask "github"
+cask "google-chrome"
+cask "iterm2"
+cask "notion"
+cask "postman"
+cask "visual-studio-code"
+cask "zoom"
+
+{{ if eq .profile "personal" }}
+# Personal only
+cask "arq"
+cask "dropbox"
+cask "expressvpn"
+cask "little-snitch"
+cask "oversight"
+cask "signal"
+cask "vlc"
+
+mas "Affinity Photo", id: 824183456
+mas "Affinity Designer", id: 824171161
+mas "CARROT Weather", id: 993487541
+mas "Deliveries: a package tracker", id: 290986013
+mas "Magnet", id: 441258766
+mas "Paprika Recipe Manager 3", id: 1303222628
+mas "Pocket", id: 568494494
+mas "Reeder 5", id: 1529448980
+{{ end }}

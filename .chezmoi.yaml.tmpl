@@ -1,0 +1,7 @@
+{{- $email := promptStringOnce . "email" "Enter email:"  -}}
+{{- $github_user := promptStringOnce . "github_user" "Enter Github user):" "mikewisian" -}}
+{{- $profile := promptStringOnce . "profile" "Enter profile (personal, work):" "personal" -}}
+data:
+  email: {{ $email }}
+  github_user: {{ $github_user }}
+  profile: {{ $profile }}
