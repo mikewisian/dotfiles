@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # include my library helpers for colorized echo
-source ./lib_sh/echos.sh
+source ./.lib_sh/echos.sh
 
 
 # Thanks to Mathias Bynens!
@@ -63,7 +63,7 @@ sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -int 1
 #sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
 
 # Disable remote apple events
-sudo systemsetup -setremoteappleevents off
+# sudo systemsetup -setremoteappleevents off
 
 # Disable remote login
 sudo systemsetup -setremotelogin off

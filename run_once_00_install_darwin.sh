@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # include my library helpers for colorized echo
-source ./lib_sh/echos.sh
+source ~/.lib_sh/echos.sh
 
 bot "ensuring build/install tools are available"
 if ! xcode-select --print-path &> /dev/null; then
@@ -48,15 +48,15 @@ else
   fi
 fi
 
-running "Installing apps and packages..."
-brew bundle install
+running "installing apps and packages..."
+brew bundle install --file="$HOME/Brewfile.local"
 
-running "cleanup homebrew"
+running "cleaning up homebrew"
 brew cleanup --force > /dev/null 2>&1
 rm -f -r /Library/Caches/Homebrew/* > /dev/null 2>&1
 ok
 
-running "Installing oh-my-zsh..."
+running "installing oh-my-zsh..."
 [[ ! -d ~/.oh-my-zsh ]] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 bot "All done!"
